@@ -50,8 +50,9 @@ $total_pages = ceil ($total_rows / $limit);
                         <td>" . $row['id'] . "</td>
                         <td>" . $row['first_name'] . " " . $row['last_name'] . "</td>
                         <td>" . $row['email'] . "</td>
-                        <td>" . $row['created_at'] . "</td>
-                        <td>" . $row['updated_at'] . "</td>
+                       <td>".  date('d/m/Y', strtotime($row['dob'])). "</td>
+                        <td>" . date('d/m/Y h:i:s A', strtotime($row['created_at'])) . "</td>
+                        <td>" . date('d/m/Y h:i:s A', strtotime($row['updated_at'])) . "</td>
                         <td>
                             <a href='update.php?id=" . $row['id'] . "' class='btn btn-warning btn-sm'>Edit</a>
                             <a href='delete.php?id=" . $row['id'] . "' onclick=\"return confirm('Delete this user?')\" class='btn btn-danger btn-sm'>Delete</a>
